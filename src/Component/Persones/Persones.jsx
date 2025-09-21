@@ -33,7 +33,7 @@ const Persones = ({ personesPromise }) => {
     console.log("FInd The Buttons ", clears);
     const filteres = cart.filter((bottle) => bottle.id !== clears);
     setCart(filteres);
-    removedLS(filteres);
+    removedLS(clears);
   };
   return (
     <div>
