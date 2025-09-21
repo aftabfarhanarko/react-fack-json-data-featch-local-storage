@@ -22,18 +22,19 @@ const Persones = ({ personesPromise }) => {
     setCart(mtArrays);
   }, [promises]);
 
+  
+    const heandalRemovedAddItems = (clears) => {
+      console.log("FInd The Buttons ", clears);
+      const filteres = cart.filter((bottle) => bottle.id !== clears);
+      setCart(filteres);
+      removedLS(clears);
+    };
+    
   const haldealeCarts = (personwerw) => {
     const newArray = [...cart, personwerw];
     setCart(newArray);
     // Saved The Bottle id In The Local Storages
     addCardID(personwerw.id);
-  };
-
-  const heandalRemovedAddItems = (clears) => {
-    console.log("FInd The Buttons ", clears);
-    const filteres = cart.filter((bottle) => bottle.id !== clears);
-    setCart(filteres);
-    removedLS(clears);
   };
   return (
     <div>
