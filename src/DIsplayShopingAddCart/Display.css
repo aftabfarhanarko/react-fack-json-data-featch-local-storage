@@ -1,0 +1,9 @@
+.card-cointner{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    border: 2px solid yellow;
+}
+.card-cointner img{
+    width: 110px;
+}

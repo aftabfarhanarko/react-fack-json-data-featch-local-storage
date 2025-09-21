@@ -18,9 +18,15 @@ const addes = (id) => {
   seavedCard(newCard);
 };
 
+const removedCardLocalStoprages = id => {
+  const storedCart = getTheLocalIiitem();
+  const reminings = storedCart.filter(storId => storId.id !== id);
+  addes(reminings);
+}
 
 export{getTheLocalIiitem as findCard ,
-    addes as addCardID 
+    addes as addCardID ,
+    removedCardLocalStoprages as removedLS
 };
 
 
