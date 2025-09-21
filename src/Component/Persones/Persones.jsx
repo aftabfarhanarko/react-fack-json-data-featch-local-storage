@@ -7,22 +7,25 @@ const Persones = ({ personesPromise }) => {
   const promises = use(personesPromise);
   const [cart, setCart] = useState([]);
 
-  //   UseEffect kaj bake...?
+  // UseEffect FInd Out Side Value
   useEffect(() => {
-     const allStoredcard = findCard()
-     console.log(allStoredcard);
+    const findtheStoredValue = findCard();
+    const mtArrays = [];
 
-     for (let id of allStoredcard) {
-        console.log(id,promises);
-        const cardFinds = promises.find(promises.id === id);
-        console.log(cardFinds);
-        
-     }
-  },[promises])
+    for (const id of findtheStoredValue) {
+      const cartBottle = promises.find(botal => botal.id === id);
+      if (cartBottle) {
+        mtArrays.push(cartBottle);
+      }
+    }
+    setCart(mtArrays);
+  }, [promises]);
+
 
   const haldealeCarts = (personwerw) => {
     const newArray = [...cart, personwerw];
     setCart(newArray);
+    // Saved The Bottle id In The Local Storages
     addCardID(personwerw.id);
   };
 
@@ -45,3 +48,17 @@ const Persones = ({ personesPromise }) => {
 };
 
 export default Persones;
+
+//  Pricktise Codes
+  // useEffect(() => {
+  //   const lsStored = findCard();
+  //   const displayCart = [];
+  //   for (const id of lsStored) {
+  //      const findItems = promises.find(item => item.id === id);
+  //      if(findItems){
+  //        displayCart.push(findItems);
+  //      }
+  //   }
+
+  //   setCart(displayCart);
+  // } , [promises])
